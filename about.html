@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seravé</title>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Montserrat:wght@400;500&family=Roboto+Slab:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="about_style.css">
+    <link rel="icon" type="image/png" sizes="100x100" href="img/favicon.png">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header_icons">
+            <button class="menu_toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menuPanel">
+                <!-- Hamburger Icon -->
+                 <svg class="menu_icon menu_icon--open" width="22" height="22" viewBox="0 0 22 22"
+                     fill="none" stroke="#3d3229" stroke-width="1.5" aria-hidden="true">
+                    <path d="M1 4h20M1 11h20M1 18h20"/>
+                </svg>
+
+                <!-- X icon -->
+                 <svg class="menu_icon menu_icon--close" width="22" height="22" viewBox="0 0 22 22"
+                     fill="none" stroke="#3d3229" stroke-width="1.5" aria-hidden="true">
+                    <path d="M2 2l18 18M20 2L2 20"/>
+                </svg>
+            </button>
+
+            <!-- Audio buttons -->
+             <button class="audio_toggle" id="audioToggle" aria-label="Play music" aria-pressed="false">
+
+                <!-- Filled icon (music playing) -->
+                <svg class="audio_icon audio_icon--on" width="22" height="22" viewBox="0 0 24 24"
+                     fill="#3d3229" stroke="#3d3229" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M3 9.5v5h3.5L11 18.5v-13L6.5 9.5H3z"/>
+                    <path d="M14.5 9a4 4 0 0 1 0 6" fill="none"/>
+                    <path d="M17 6.5a8 8 0 0 1 0 11" fill="none"/>
+                </svg>
+
+                <!-- Outline icon (music muted) -->
+                <svg class="audio_icon audio_icon--off" width="22" height="22" viewBox="0 0 24 24"
+                     fill="none" stroke="#3d3229" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M3 9.5v5h3.5L11 18.5v-13L6.5 9.5H3z"/>
+                    <path d="M14.5 9a4 4 0 0 1 0 6"/>
+                    <path d="M17 6.5a8 8 0 0 1 0 11"/>
+                </svg>
+             </button>
+
+             <!-- Audio Music Background -->
+             <audio id="bgMusic" src="audio/background_music.mp3" loop preload="load"></audio>
+        </div>
+
+        <div class="header_logo">
+            <a href="home.html">
+                <img src="img/logo_name.png" alt="Seravé Logo">
+            </a>
+        </div>
+
+        <nav class="header_nav">
+            <a href="home.html">HOME</a>
+            <a href="order.html">SHOP NOW</a>
+        </nav>
+
+        <!-- Horizontal menu panel -->
+         <nav class="menu_panel" id="menuPanel" aria-label="Main menu">
+            <div class="menu_links">
+                <a href="home.html">Home</a>
+                <a href="">About Us</a>
+                <a href="products.html">Products</a>
+                <a href="order.html">Order Form</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+         </nav>
+    </header>
+    
+    <main>
+        <!-- HERO -->
+        <section class="hero">
+            <img class="hero_charm hero_charm--left" src="img/charm_left.png" alt="Charm Design on the Left">
+            <img class="hero_charm hero_charm--right" src="img/charm_right.png" alt="Charm Design on the Right">
+
+            <h1 class="hero_title">Welcome to Seravé</h1>
+            <p class="hero_subtitle">
+                a space for meaningful bracelets designed to express your story,
+                your style, and every moment in between.
+            </p>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="about">
+            <div class="about_layout">
+
+                <div class="about_side">ABOUT US</div>
+
+                <div class="about_card">
+                    <p class="about_text">
+                        Here at Seravé, pieces to put together a charm has its story. These may be
+                        memories built with friendships, a milestone reached, just for a person that
+                        has a special place in your heart. Each bracelet is thoroughly customized to
+                        become something that you'll treasure in the long run
+                    </p>
+
+                    <p class="about_text">
+                        These bracelets are made uniquely as possible for the people who wear them.
+                        Selecting materials that match the preference of our customers gives them
+                        attention to detail and care. We hope that the bracelets we crafted will
+                        become something that you wear that is filled with memories, stories, and
+                        journeys.
+                    </p>
+
+                    <h2 class="about_title">WHY CHOOSE US?</h2>
+
+                    <p class="about_text">
+                        In Seravé, our bracelets are designed to make your stories a little more
+                        memorable and special. From an ordinary day to meaningful gifts, each
+                        bracelet is made with care, quality, and uniquely designed with your
+                        imagination. We want to ensure that the piece we will make with you will
+                        feel personal and unique&mdash;something you can sentimental with, wearing
+                        it freely, and carry with you wherever life takes you.
+                    </p>
+                </div>
+
+                <div class="about_side">SERAVÉ</div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer_social">
+            <a href="https://www.facebook.com/nathalie.shanne" target="_blank">
+                <svg viewBox="0 0 24 24" aria-label="Facebook">
+                    <path d="M12 2a10 10 0 0 0-1.6 19.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 12 2z"/>
+                </svg>
+            </a>
+
+            <a href="https://www.instagram.com/fpzrgizz/?hl=en" target="_blank">
+                <svg viewBox="0 0 24 24" aria-label="Instagram">
+                    <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM17.3 6a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z" />
+                </svg>
+            </a>
+        </div>
+
+        <nav class="footer_links">
+            <a href="home.html">Home</a>
+            <a href="#">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="#">Order Form</a>
+            <a href="#">Contact Us</a>
+        </nav>
+
+        <p class="footer_copyright">&copy; Created by Nikka Marielle Bernal.  All Rights Reserved</p>
+    </footer>
+    <script src="menu.js"></script>
+    <script src="audio.js"></script>
+</body>
+</html>

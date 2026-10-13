@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seravé</title>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Montserrat:wght@400;500&family=Roboto+Slab:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="order_style.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+<body>
+        
+    <!-- Header -->
+    <header class="header">
+        <div class="header_icons">
+            <button class="menu_toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menuPanel">
+                <!-- Hamburger Icon -->
+                 <svg class="menu_icon menu_icon--open" width="22" height="22" viewBox="0 0 22 22"
+                     fill="none" stroke="#3d3229" stroke-width="1.5" aria-hidden="true">
+                    <path d="M1 4h20M1 11h20M1 18h20"/>
+                </svg>
+
+                <!-- X icon -->
+                 <svg class="menu_icon menu_icon--close" width="22" height="22" viewBox="0 0 22 22"
+                     fill="none" stroke="#3d3229" stroke-width="1.5" aria-hidden="true">
+                    <path d="M2 2l18 18M20 2L2 20"/>
+                </svg>
+            </button>
+
+            <!-- Audio buttons -->
+             <button class="audio_toggle" id="audioToggle" aria-label="Play music" aria-pressed="false">
+
+                <!-- Filled icon (music playing) -->
+                <svg class="audio_icon audio_icon--on" width="22" height="22" viewBox="0 0 24 24"
+                     fill="#3d3229" stroke="#3d3229" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M3 9.5v5h3.5L11 18.5v-13L6.5 9.5H3z"/>
+                    <path d="M14.5 9a4 4 0 0 1 0 6" fill="none"/>
+                    <path d="M17 6.5a8 8 0 0 1 0 11" fill="none"/>
+                </svg>
+
+                <!-- Outline icon (music muted) -->
+                <svg class="audio_icon audio_icon--off" width="22" height="22" viewBox="0 0 24 24"
+                     fill="none" stroke="#3d3229" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M3 9.5v5h3.5L11 18.5v-13L6.5 9.5H3z"/>
+                    <path d="M14.5 9a4 4 0 0 1 0 6"/>
+                    <path d="M17 6.5a8 8 0 0 1 0 11"/>
+                </svg>
+             </button>
+
+             <!-- Audio Music Background -->
+             <audio id="bgMusic" src="audio/background_music.mp3" loop preload="load"></audio>
+        </div>
+
+        <div class="header_logo">
+            <a href="home.html">
+                <img src="img/logo_name.png" alt="Seravé Logo">
+            </a>
+        </div>
+
+        <nav class="header_nav">
+            <a href="home.html">HOME</a>
+            <a href="order.html">SHOP NOW</a>
+        </nav>
+
+        <!-- Horizontal menu panel -->
+         <nav class="menu_panel" id="menuPanel" aria-label="Main menu">
+            <div class="menu_links">
+                <a href="home.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="products.html">Products</a>
+                <a href="#">Order Form</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+         </nav>
+    </header>
+    
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+            <img class="hero_charm hero_charm--left" src="img/charm_left.png" alt="Charm Design on the Left">
+            <img class="hero_charm hero_charm--right" src="img/charm_right.png" alt="Charm Design on the Right">
+
+            <h1 class="hero_title">Order Form</h1>
+            <p class="hero_subtitle">
+                ready to order your bracelet? complete this form and you will be receiving an email from us!
+            </p>
+        </section>
+
+        <!-- ORDER FORM -->
+        <section class="order">
+            <form action="#" method="post">
+
+                <div class="order_layout">
+
+                    <!-- Card 1: Customer Information -->
+                     <div class="order_card">
+                        <h2 class="order_title">Customer Information</h2>
+
+                        <label class="order_label" for="first-name">First Name:</label>
+                        <input class="order_input" type="text" id="first-name" name="first_name">
+
+                        <label class="order_label" for="last-name">Last Name:</label>
+                        <input class="order_input" type="text" id="last-name" name="last_name">
+
+                        <label class="order_label" for="email">Email</label>
+                        <input class="order_input" type="email" id="email" name="email">
+
+                        <label class="order_label" for="phone">Phone Number:</label>
+                        <input class="order_input" type="tel" id="phone" name="phone">
+                     </div>
+
+                    <!-- Card 2: Your Order -->
+                    <div class="order_card">
+                        <h2 class="order_title">Your Order</h2>
+
+                        <h3 class="order_group_title">Bracelet Type</h3>
+                        <label class="order_option"><input type="checkbox" name="bracelet" value="gold"> Gold Bracelet</label>
+                        <label class="order_option"><input type="checkbox" name="bracelet" value="silver"> Silver Bracelet</label>
+
+                        <hr class="order_divider">
+
+                        <h3 class="order_group_title">Charms</h3>
+                        <label class="order_option"><input type="checkbox" name="charms" value="plain"> Plain Charm</label>
+                        <label class="order_option"><input type="checkbox" name="charms" value="customized"> Customized Charm</label>
+
+                        <hr class="order_divider">
+
+                        <h3 class="order_group_title">Bundle Deals</h3>
+                        <label class="order_option"><input type="checkbox" name="bundle" value="gold-3"> Gold + 3 extra custom charms</label>
+                        <label class="order_option"><input type="checkbox" name="bundle" value="silver-3"> Silver + 3 extra custom charms</label>
+                        <label class="order_option"><input type="checkbox" name="bundle" value="gold-5"> Gold + 5 extra custom charms + FREE plain charm</label>
+                        <label class="order_option"><input type="checkbox" name="bundle" value="silver-5"> Silver + 5 extra custom charms + FREE plain charm</label>
+                    </div>
+
+                    <!-- Card 3: Referral Source -->
+                    <div class="order_card">
+                        <h2 class="order_title">Referral Source</h2>
+
+                        <label class="order_label" for="referral">How did you find us?<span class="order_hint"> (ex. Instagram, Facebook)</span></label>
+                        <input class="order_input" type="text" id="referral" name="referral">
+
+                        <label class="order_label" for="questions">Any questions/suggestions?</label>
+                        <textarea class="order_textarea" id="questions" name="questions"></textarea>
+                    </div>
+                </div>
+
+                <div class="order_actions">
+                    <button class="order_submit" type="submit">SUBMIT</button>
+                    <button class="order_reset" type="reset">Reset</button>
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+    
+    <footer class="footer">
+        <div class="footer_social">
+            <a href="https://www.facebook.com/nathalie.shanne" target="_blank">
+                <svg viewBox="0 0 24 24" aria-label="Facebook">
+                    <path d="M12 2a10 10 0 0 0-1.6 19.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 12 2z"/>
+                </svg>
+            </a>
+
+            <a href="https://www.instagram.com/fpzrgizz/?hl=en" target="_blank">
+                <svg viewBox="0 0 24 24" aria-label="Instagram">
+                    <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM17.3 6a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z" />
+                </svg>
+            </a>
+        </div>
+
+        <nav class="footer_links">
+            <a href="home.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="#">Order Form</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+
+        <p class="footer_copyright">&copy; Created by Nikka Marielle Bernal.  All Rights Reserved</p>
+    </footer>
+    <script src="menu.js"></script>
+    <script src="audio.js"></script>
+</body>
+</html>

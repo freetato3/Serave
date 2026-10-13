@@ -1,0 +1,614 @@
+:root {
+      /* Colors */
+      --color-page:   #ddd3c4;
+      --color-bar:    #d9d2c6;
+      --color-brown:  #8c7864;
+      --color-dark:   #4a3d33;
+      --color-text:   #5a4c40;
+      --color-light:  #f3ecdf;
+
+      /* Fonts */
+      --font-body:    "Roboto Slab", Georgia, serif;
+      --font-heading: "Montserrat", sans-serif;
+      --font-script:  "Allura", cursive;
+
+      color-scheme: light;
+}
+
+/* RESET BASE */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  background-color: #8C7864;   
+  position: relative;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-weight: 300;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;                 
+  z-index: -1;                 
+  background: url("img/background.jpg") center / cover no-repeat;
+  opacity: 0.1;               
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* HEADER */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 44px;
+    padding-top: calc(14px + env(safe-area-inset-top, 0px));
+    background: var(--color-bar);
+}
+
+.header_icons {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 18px;
+}
+
+.header_logo img {
+    height: 130px;
+    width: auto;
+    display: block;
+}
+
+.header_nav {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    gap: 80px;
+    font-family: var(--font-body);
+    font-size: 19px;
+    letter-spacing: 0.5px;
+}
+
+
+
+/* HAMBURGER MENU*/
+.menu_toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu_icon {
+    width: 30px;
+    height: 30px;
+}
+
+/* Only one icon shows at a time */
+.menu_icon--close { display: none; }
+.menu_toggle.is-active .menu_icon--open { display: none; }
+.menu_toggle.is-active .menu_icon--close { display: block; }
+
+/* Horizontal links row, hidden until opened */
+.menu_panel {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    visibility: hidden;
+    pointer-events: none;
+    transition: visibility 0s linear 0.35s;
+}
+
+.menu_panel.is-open {
+    visibility: visible;
+    pointer-events: auto;
+    transition: visibility 0s;
+}
+
+.menu_links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    padding: 18px 44px;
+    background: var(--color-bar);
+    border-bottom: 1px solid rgba(74, 61, 51, 0.2);
+    font-family: var(--font-body);
+    font-size: 28px;
+    transform: translateY(-100%);
+    transition: transform 0.35s ease-in;
+}
+
+.menu_panel.is-open .menu_links {
+    transform: translateY(0);
+    transition: transform 0.4s ease-out;
+}
+
+.menu_panel a {
+    padding: 8px 4px;
+    color: var(--color-text);
+    transition: color 0.2s ease;
+}
+
+.menu_panel a:hover {
+    color: var(--color-brown);
+}
+
+
+
+/* AUDIO BUTTON */
+.audio_toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.audio_icon {
+    width: 30px;
+    height: 30px;
+}
+
+/* One icon at a time */
+.audio_icon--on { display: none; }
+.audio_toggle.is-playing .audio_icon--off { display: none; }
+.audio_toggle.is-playing .audio_icon--on { display: block; }
+
+
+
+/* HERO */
+.hero {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 230px;
+    padding: 40px 20px;
+    text-align: center;
+    background: var(--color-bar);
+}
+
+.hero_title {
+    margin-bottom: 12px;
+    font-size: 30px;
+    font-weight: 300;
+    color: var(--color-text);
+}
+
+.hero_subtitle {
+    max-width: 500px;
+    font-size: 15px;
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+}
+
+/* Image placeholders for the charms */
+.hero_charm {
+    position: absolute;
+    border-radius: 6px;
+}
+
+.hero_charm--left {
+    top: -163px;
+    left: -130px;
+    width: clamp(130px, 18vw, 500px);
+    transform: rotate(-30deg);
+}
+
+.hero_charm--right {
+    top: -145px;
+    right: -90px;
+    width: clamp(90px, 22vw, 320px);
+    transform: rotate(8deg);
+}
+
+
+
+/* CONTACTS */
+.contact {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px 24px;
+    text-align: center;
+    color: var(--color-light);
+}
+
+.contact_layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    width: 100%;
+    max-width: 700px;
+}
+
+.contact_label {
+    margin-bottom: 14px;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.contact_button {
+    display: block;
+    padding: 10px 20px;
+    border-radius: 24px;
+    background: var(--color-bar);
+    color: var(--color-text);
+    font-size: 16px;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.contact_button:hover,
+.contact_button:focus-visible {
+    background: var(--color-dark);
+    color: var(--color-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.contact_socials {
+    margin-top: 40px;
+}
+
+.contact_socials_title {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.contact_socials_list {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+.contact_socials_list svg {
+    display: block;
+    width: 28px;
+    height: 28px;
+    fill: var(--color-light);
+    transition: opacity 0.2s ease;
+}
+
+.contact_socials_list a:hover svg {
+    opacity: 0.7;
+}
+
+.contact_copyright {
+    margin-top: auto;
+    padding-top: 60px;
+    font-family: var(--font-heading);
+    font-size: 10px;
+    color: var(--color-light);
+}
+
+
+
+/* CONTACT NOTE (mobile only, shown in MOBILE VIEW) */
+.contact_note {
+    display: none;
+}
+
+
+
+
+/* ==========================================================
+   VERTICAL MENU (tablet and mobile only)
+   Fixed side panel that slides in from the left. Desktop keeps the horizontal menu.
+   ========================================================== */
+@media (max-width: 1024px) {
+
+    /* Panel stays in place while the page scrolls behind it */
+    .menu_panel {
+        position: fixed;
+        top: 0;
+        width: 65%;
+        max-width: 340px;
+        height: 100vh;
+        height: 100dvh;
+    }
+
+    /* The links column, centered, slides in from the left */
+    .menu_links {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 56px;
+        width: 100%;
+        height: 100%;
+        padding: 160px 20px 40px;       /* top space keeps the links below the header buttons */
+        border-bottom: none;
+        text-align: center;
+        transform: translateX(-100%);
+    }
+
+    .menu_panel.is-open .menu_links {
+        transform: translateX(0);
+    }
+
+    /* Keep the hamburger/X and audio buttons above the panel */
+    .menu_toggle,
+    .audio_toggle {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+
+
+
+/* ==========================================================
+   CONTACT: FADE (tablet and mobile)
+   The brown area fades into a darker brown at the bottom
+   ========================================================== */
+@media (max-width: 1024px) {
+
+    .contact {
+        position: relative;
+    }
+
+    .contact::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 260px;
+        pointer-events: none;
+        background: linear-gradient(180deg, transparent 0%, rgba(74, 61, 51, 0.85) 100%);
+    }
+
+    /* Keep the content above the fade */
+    .contact_layout,
+    .contact_socials,
+    .contact_copyright {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+
+
+
+/* ==========================================================
+   TABLET VIEW (601px to 1024px)
+   Same header layout as the desktop, with smaller sizes
+   ========================================================== */
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    /* Header: audio button stays beside the hamburger, nav on the right */
+    .header {
+        padding-inline: 30px;
+    }
+
+    .header_logo img {
+        height: 90px;
+    }
+
+    .header_nav {
+        gap: 40px;
+        font-size: 15px;
+    }
+
+    .menu_links {
+        padding-top: 190px;                /* starts below the taller tablet header */
+    }
+
+
+    /* Hero */
+    .hero_title {
+        font-size: 34px;
+    }
+
+    .hero_subtitle {
+        max-width: 450px;
+        font-size: 12px;
+    }
+
+    .hero_charm--left {
+        top: 25px;
+        left: -30px;
+        width: 150px;
+        transform: rotate(-30deg);
+    }
+
+    .hero_charm--right {
+        top: 40px;
+        right: -35px;
+        width: 110px;
+        transform: rotate(8deg);
+    }
+
+
+    /* Contact: email, phone number and socials stacked */
+    .contact {
+        padding: 50px 30px 24px;
+    }
+
+    .contact_layout {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        max-width: 400px;
+    }
+
+    .contact_label {
+        margin-bottom: 14px;
+        font-size: 28px;
+    }
+
+    .contact_button {
+        padding: 14px 20px;
+        border-radius: 28px;
+        font-size: 20px;
+    }
+
+    .contact_socials {
+        margin-top: 50px;
+    }
+
+    .contact_socials_title {
+        margin-bottom: 14px;
+        font-size: 28px;
+    }
+
+    .contact_socials_list svg {
+        width: 36px;
+        height: 36px;
+    }
+
+    .contact_copyright {
+        padding-top: 200px;
+    }
+}
+
+
+
+
+/* ==========================================================
+   MOBILE VIEW (up to 600px)
+   Audio button moves to the top right, nav and subtitle are hidden
+   ========================================================== */
+@media (max-width: 600px) {
+
+    /* Header: hamburger on the left, logo in the middle, audio on the right */
+    .header {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        padding: 12px 20px;
+        padding-top: calc(12px + env(safe-area-inset-top, 0px));
+    }
+
+    .header_icons {
+        display: contents;
+    }
+
+    .menu_toggle {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: start;
+    }
+
+    .header_logo {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .audio_toggle {
+        grid-column: 3;
+        grid-row: 1;
+        justify-self: end;
+    }
+
+    .header_logo img {
+        height: 56px;
+    }
+
+    .header_nav {
+        display: none;                     /* HOME and SHOP NOW are hidden */
+    }
+
+
+    /* Hero: title only */
+    .hero {
+        min-height: 110px;
+        padding: 20px;
+    }
+
+    .hero_title {
+        margin-bottom: 0;
+        font-size: 24px;
+    }
+
+    .hero_subtitle {
+        display: none;
+    }
+
+    .hero_charm--left {
+        top: 28px;
+        left: -30px;
+        width: 70px;
+        transform: rotate(-30deg);
+    }
+
+    .hero_charm--right {
+        top: 25px;
+        right: -25px;
+        width: 60px;
+        transform: rotate(8deg);
+    }
+
+
+    /* Contact: note, email, phone number and socials stacked */
+    .contact {
+        padding: 44px 20px 24px;
+    }
+
+    .contact_note {
+        display: block;
+        max-width: 280px;
+        margin-bottom: 26px;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.4;
+    }
+
+    .contact_layout {
+        grid-template-columns: 1fr;
+        gap: 26px;
+        max-width: 270px;
+    }
+
+    .contact_label {
+        margin-bottom: 10px;
+        font-size: 22px;
+    }
+
+    .contact_button {
+        padding: 7px 20px;
+        font-size: 14px;
+    }
+
+    .contact_socials {
+        margin-top: 40px;
+    }
+
+    .contact_socials_title {
+        margin-bottom: 8px;
+        font-size: 32px;
+    }
+
+    .contact_socials_list svg {
+        width: 34px;
+        height: 34px;
+    }
+
+    .contact_copyright {
+        padding-top: 300px;
+    }
+}
+
