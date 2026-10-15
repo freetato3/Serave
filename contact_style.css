@@ -316,10 +316,7 @@ a {
 
 
 
-/* ==========================================================
-   VERTICAL MENU (tablet and mobile only)
-   Fixed side panel that slides in from the left. Desktop keeps the horizontal menu.
-   ========================================================== */
+/* VERTICAL MENU */
 @media (max-width: 1024px) {
 
     /* Panel stays in place while the page scrolls behind it */
@@ -341,7 +338,7 @@ a {
         gap: 56px;
         width: 100%;
         height: 100%;
-        padding: 160px 20px 40px;       /* top space keeps the links below the header buttons */
+        padding: 160px 20px 40px;
         border-bottom: none;
         text-align: center;
         transform: translateX(-100%);
@@ -360,12 +357,6 @@ a {
 }
 
 
-
-
-/* ==========================================================
-   CONTACT: FADE (tablet and mobile)
-   The brown area fades into a darker brown at the bottom
-   ========================================================== */
 @media (max-width: 1024px) {
 
     .contact {
@@ -395,10 +386,7 @@ a {
 
 
 
-/* ==========================================================
-   TABLET VIEW (601px to 1024px)
-   Same header layout as the desktop, with smaller sizes
-   ========================================================== */
+/* TABLET VIEWPORT */
 @media (min-width: 601px) and (max-width: 1024px) {
 
     /* Header: audio button stays beside the hamburger, nav on the right */
@@ -416,7 +404,7 @@ a {
     }
 
     .menu_links {
-        padding-top: 190px;                /* starts below the taller tablet header */
+        padding-top: 190px;
     }
 
 
@@ -489,10 +477,7 @@ a {
 
 
 
-/* ==========================================================
-   MOBILE VIEW (up to 600px)
-   Audio button moves to the top right, nav and subtitle are hidden
-   ========================================================== */
+/* MOBILE VIEWPORT */
 @media (max-width: 600px) {
 
     /* Header: hamburger on the left, logo in the middle, audio on the right */
@@ -529,7 +514,7 @@ a {
     }
 
     .header_nav {
-        display: none;                     /* HOME and SHOP NOW are hidden */
+        display: none;
     }
 
 
@@ -612,3 +597,234 @@ a {
     }
 }
 
+
+
+/* PRINT VIEWPORT */
+@page {
+    size: letter portrait;
+    margin: 0;
+}
+ 
+@media print {
+ 
+    /* Paper: off-white page, colors are printed as they are */
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+ 
+    html,
+    body {
+        background: #fcfbf9;
+    }
+ 
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 99vh;
+        padding: 14mm 14.5mm;
+        color: #4f4237;
+    }
+ 
+    body::before {
+        display: none;                     /* no background image on paper */
+    }
+ 
+    main {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;           /* content sits in the middle of the page */
+    }
+ 
+    audio,
+    .button {
+        display: none;
+    }
+ 
+ 
+    /* Running header: brand on the left, page name and number on the right */
+    .header {
+        position: static;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        padding: 0 0 4.5mm;
+        background: none;
+        border-bottom: 1px solid #d9d2c6;
+    }
+ 
+    .header > * {
+        display: none;                     /* menu, logo, nav and audio are not printed */
+    }
+ 
+    .header::before {
+        content: "SERAVÉ · HANDPICKED CHARMS";
+        font-family: var(--font-body);
+        font-size: 6.5pt;
+        letter-spacing: 0.04em;
+        color: #6b5d51;
+    }
+ 
+    .header::after {
+        content: "CONTACT US — PAGE 4";
+        font-family: var(--font-heading);
+        font-size: 6.5pt;
+        letter-spacing: 0.04em;
+        color: #6b5d51;
+    }
+ 
+ 
+    /* Hero: centered title and subtitle with a light rule */
+    .hero {
+        min-height: 0;
+        margin-bottom: 8mm;
+        padding: 0;
+        overflow: visible;
+        background: none;
+    }
+ 
+    .hero_charm {
+        display: none;
+    }
+ 
+    .hero_title {
+        margin-bottom: 4mm;
+        font-size: 23pt;
+        font-weight: 300;
+        color: #4f4237;
+    }
+ 
+    .hero_subtitle {
+        max-width: 130mm;
+        font-size: 7.5pt;
+        letter-spacing: 0;
+        line-height: 1.6;
+        color: #8a7d70;
+    }
+ 
+    .hero_subtitle::after {
+        content: "";
+        display: block;
+        width: 27mm;
+        margin: 6mm auto 0;
+        border-top: 1px solid #d9d2c6;
+    }
+ 
+ 
+    /* Email and phone cards */
+    .contact {
+        flex: none;
+        align-items: stretch;
+        padding: 0;
+        color: #4f4237;
+    }
+ 
+    .contact_layout {
+        grid-template-columns: 1fr 1fr;
+        gap: 6.4mm;
+        max-width: none;
+    }
+ 
+    .contact_item {
+        padding: 5mm;
+        border: 1px solid #e4ded4;
+        border-radius: 2.5mm;
+        background: #fffdfb;
+    }
+ 
+    .contact_label {
+        margin-bottom: 2.5mm;
+        font-size: 0;                      /* the printed label comes from the lines below */
+    }
+ 
+    .contact_label::before {
+        font-family: var(--font-heading);
+        font-size: 6pt;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        color: #3b3027;
+    }
+ 
+    .contact_item:nth-child(1) .contact_label::before { content: "EMAIL INQUIRIES"; }
+    .contact_item:nth-child(2) .contact_label::before { content: "PHONE INQUIRIES"; }
+ 
+    .contact_button {
+        padding: 0;
+        border-radius: 0;
+        background: none;
+        box-shadow: none;
+        font-size: 9pt;
+        color: #4f4237;
+    }
+ 
+ 
+    /* Socials card */
+    .contact_socials {
+        margin-top: 6mm;
+        padding: 5mm;
+        border-radius: 2.5mm;
+        background: #f1e9de;
+    }
+ 
+    .contact_socials_title {
+        margin-bottom: 3mm;
+        font-size: 10pt;
+        font-weight: 700;
+        color: #3b3027;
+    }
+ 
+    .contact_socials_list {
+        gap: 14mm;
+    }
+ 
+    .contact_socials_list a {
+        display: flex;
+        align-items: center;
+        gap: 2mm;
+        font-family: var(--font-heading);
+        font-size: 7pt;
+        white-space: nowrap;
+        color: #4f4237;
+    }
+ 
+    .contact_socials_list svg {
+        width: 3.5mm;
+        height: 3.5mm;
+        fill: #b9b0a4;
+    }
+ 
+    .contact_socials_list a[aria-label="Facebook"]::after { content: "Facebook: nathalie.shanne"; }
+    .contact_socials_list a[aria-label="Instagram"]::after { content: "Instagram: @fpzrgizz"; }
+ 
+ 
+    /* Running footer: this page has no footer bar, so the copyright line sits at the bottom */
+    .contact_copyright {
+        position: fixed;
+        right: 14.5mm;
+        bottom: 14mm;
+        left: 14.5mm;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        margin: 0;
+        padding: 4mm 0 0;
+        border-top: 1px solid #d9d2c6;
+        font-size: 0;
+    }
+ 
+    .contact_copyright::before {
+        content: "© 2026 Seravé. Created by Nikka Marielle Bernal | All Rights Reserved.";
+        font-family: var(--font-heading);
+        font-size: 5pt;
+        color: #7a6c60;
+    }
+ 
+    .contact_copyright::after {
+        content: "4";
+        font-family: var(--font-heading);
+        font-size: 7pt;
+        font-weight: 700;
+        color: #3b3027;
+    }
+}

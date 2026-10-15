@@ -808,3 +808,297 @@ a {
         margin: 0 auto 24px;
     }
 }
+
+
+
+/* ==========================================================
+   PRINT VIEW
+   Letter size, portrait. Menus, buttons and images are hidden.
+   ========================================================== */
+@page {
+    size: letter portrait;
+    margin: 0;
+}
+ 
+@media print {
+ 
+    /* Paper: off-white page, colors are printed as they are */
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+ 
+    html,
+    body {
+        background: #fcfbf9;
+    }
+ 
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 99vh;
+        padding: 14mm 14.5mm;
+        color: #4f4237;
+    }
+ 
+    body::before {
+        display: none;
+    }
+ 
+    main {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+    }
+ 
+    audio,
+    .button {
+        display: none;
+    }
+ 
+ 
+    /* Running header: brand on the left, page name and number on the right */
+    .header {
+        position: static;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        padding: 0 0 4.5mm;
+        background: none;
+        border-bottom: 1px solid #d9d2c6;
+    }
+ 
+    .header > * {
+        display: none;
+    }
+ 
+    .header::before {
+        content: "SERAVÉ · HANDPICKED CHARMS";
+        font-family: var(--font-body);
+        font-size: 6.5pt;
+        letter-spacing: 0.04em;
+        color: #6b5d51;
+    }
+ 
+    .header::after {
+        content: "HOME — PAGE 1";
+        font-family: var(--font-heading);
+        font-size: 6.5pt;
+        letter-spacing: 0.04em;
+        color: #6b5d51;
+    }
+ 
+ 
+    /* Hero: Seravé title, short rule and tagline */
+    .hero {
+        display: block;
+        height: auto;
+        margin-bottom: 9mm;
+        padding: 0;
+        text-align: center;
+        color: #8a7d70;
+        background: none;
+    }
+ 
+    .hero::before {
+        content: "Seravé";
+        display: block;
+        font-size: 36pt;
+        font-weight: 300;
+        line-height: 1.1;
+        color: #4f4237;
+    }
+ 
+    .hero_text {
+        max-width: 125mm;
+        margin: 0 auto;
+        font-size: 14pt;
+        line-height: 1.45;
+    }
+ 
+    .hero_text::before {
+        content: "";
+        display: block;
+        width: 24mm;
+        margin: 4mm auto;
+        border-top: 1.5px solid #4f4237;
+    }
+ 
+ 
+    /* Feature release card */
+    .collection {
+        margin-bottom: 9mm;
+        padding: 0;
+    }
+ 
+    .collection_card {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 10mm;
+        max-width: none;
+        margin: 0;
+        padding: 6.4mm;
+        border-radius: 3mm;
+        background: #f1e9de;
+    }
+ 
+    .collection_content {
+        text-align: left;
+    }
+ 
+    .collection_title {
+        margin: 0;
+        font-size: 0;
+        letter-spacing: 0;
+    }
+ 
+    .collection_title::before {
+        content: "FEATURE RELEASE";
+        display: block;
+        margin-bottom: 4mm;
+        font-family: var(--font-heading);
+        font-size: 6pt;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        color: #3b3027;
+    }
+ 
+    .collection_title::after {
+        content: "The Purple Collection";
+        display: block;
+        margin-bottom: 4mm;
+        font-family: var(--font-body);
+        font-size: 14pt;
+        font-weight: 400;
+        color: #3b3027;
+    }
+ 
+    .collection_description {
+        margin: 0;
+        font-size: 8pt;
+        line-height: 1.6;
+        color: #6b5d51;
+    }
+ 
+    .collection_image {
+        width: 42mm;
+        height: 53mm;
+        border-radius: 2mm;
+    }
+ 
+ 
+    /* Reviews: three cards, no photos */
+    .reviews {
+        padding: 0;
+        background: none;
+    }
+ 
+    .reviews_title {
+        display: flex;
+        align-items: center;
+        gap: 4mm;
+        margin-bottom: 4mm;
+        font-family: var(--font-body);
+        font-size: 8pt;
+        font-weight: 700;
+        text-align: left;
+        color: #3b3027;
+    }
+ 
+    .reviews_title::after {
+        content: "";
+        flex: 1;
+        border-top: 1px solid #e4ded4;
+    }
+ 
+    .reviews_list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        justify-content: stretch;
+        align-items: start;
+        gap: 5.5mm;
+        max-width: none;
+    }
+ 
+    .review {
+        max-width: none;
+        padding: 2.5mm 3mm;
+        border: 1px solid #e4ded4;
+        border-radius: 2mm;
+        background: #fffdfb;
+        text-align: left;
+    }
+ 
+    .review_image {
+        display: none;
+    }
+ 
+    .review_stars {
+        margin-bottom: 2mm;
+        font-size: 7pt;
+        letter-spacing: 1.5px;
+        color: #3b3027;
+    }
+ 
+    .review_text {
+        margin-bottom: 2mm;
+        font-size: 6.5pt;
+        line-height: 1.5;
+        color: #4f4237;
+    }
+ 
+    .review_author {
+        font-size: 5.5pt;
+        font-weight: 700;
+        color: #4f4237;
+    }
+ 
+    .customize {
+        display: none;
+    }
+ 
+ 
+    /* Running footer: copyright on the left, page number on the right */
+    .footer {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        margin-top: auto;
+        position: fixed;
+        right: 14.5mm;
+        bottom: 14mm;
+        left: 14.5mm;
+        padding: 4mm 0 0;
+        background: none;
+        border-top: 1px solid #d9d2c6;
+        text-align: left;
+        color: #6b5d51;
+    }
+ 
+    .footer_social,
+    .footer_links {
+        display: none;
+    }
+ 
+    .footer_copyright {
+        font-size: 0;
+    }
+ 
+    .footer_copyright::before {
+        content: "© 2026 Seravé. Created by Nikka Marielle Bernal | All Rights Reserved.";
+        font-family: var(--font-heading);
+        font-size: 5pt;
+        color: #7a6c60;
+    }
+ 
+    .footer::after {
+        content: "1";
+        font-family: var(--font-heading);
+        font-size: 7pt;
+        font-weight: 700;
+        color: #3b3027;
+    }
+}
+ 
