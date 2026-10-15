@@ -602,7 +602,7 @@ a {
 }
 
 
-/* PRINT VIEW */
+/* PRINT VIEWPORT */
 @page {
     size: letter portrait;
     margin: 0;
@@ -815,4 +815,3 @@ a {
         color: #3b3027;
     }
 }
- 
