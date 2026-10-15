@@ -196,10 +196,7 @@ a {
 
 
 
-/* ==========================================================
-   VERTICAL MENU (tablet and mobile only)
-   Fixed side panel that slides in from the left. Desktop keeps the horizontal menu.
-   ========================================================== */
+/* VERTICAL MENU */
 @media (max-width: 1024px) {
 
     /* Panel stays in place while the page scrolls behind it */
@@ -221,7 +218,7 @@ a {
         gap: 56px;
         width: 100%;
         height: 100%;
-        padding: 160px 20px 40px;       /* top space keeps the links below the header buttons */
+        padding: 160px 20px 40px;
         border-bottom: none;
         text-align: center;
         transform: translateX(-100%);
@@ -276,8 +273,8 @@ a {
     color: #f3ecdf;
 
     background-image: url("img/hero_img.png");
-    background-size: cover;       /* fills the whole section */
-    background-position: center;  /* which part of the image stays visible */
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
 }
 
@@ -495,7 +492,6 @@ a {
 
 
 /* SECTION SEAMS */
-/* Overlaps each section by 1px so no thin line shows between them */
 .customize,
 .footer {
     margin-top: -1px;
@@ -503,10 +499,7 @@ a {
 
 
 
-/* ==========================================================
-   TABLET VIEW (601px to 1024px)
-   Same layout as the desktop, with smaller sizes
-   ========================================================== */
+/* TABLET VIEWPORT */
 @media (min-width: 601px) and (max-width: 1024px) {
 
     /* Header: audio button stays beside the hamburger, nav on the right */
@@ -647,10 +640,7 @@ a {
 
 
 
-/* ==========================================================
-   MOBILE VIEW (up to 600px)
-   Audio button moves to the top right, nav and reviews are hidden
-   ========================================================== */
+/* MOBILE VIEWPORT */
 @media (max-width: 600px) {
 
     /* Header: hamburger on the left, logo in the middle, audio on the right */
@@ -811,10 +801,7 @@ a {
 
 
 
-/* ==========================================================
-   PRINT VIEW
-   Letter size, portrait. Menus, buttons and images are hidden.
-   ========================================================== */
+/* PRINT VIEWPORT */
 @page {
     size: letter portrait;
     margin: 0;
@@ -1101,4 +1088,5 @@ a {
         color: #3b3027;
     }
 }
+ 
  
