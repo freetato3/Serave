@@ -464,8 +464,8 @@ a {
 
 
 
-/* VERTICAL MENU */
-@media (max-width: 1024px) {
+/* VFERTICAL MENU */
+@media screen and (max-width: 1024px) {
 
     /* Panel stays in place while the page scrolls behind it */
     .menu_panel {
@@ -508,7 +508,7 @@ a {
 
 
 /* TABLET VIEWPORT */
-@media (min-width: 601px) and (max-width: 1024px) {
+@media screen and (min-width: 601px) and (max-width: 1024px) {
 
     /* Header: audio button stays beside the hamburger, nav on the right */
     .header {
@@ -650,7 +650,7 @@ a {
 
 
 /* MOBILE VIEWPORT */
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
 
     /* Header: hamburger on the left, logo in the middle, audio on the right */
     .header {
@@ -814,20 +814,20 @@ a {
     size: letter portrait;
     margin: 0;
 }
- 
+
 @media print {
- 
+
     /* Paper: off-white page, colors are printed as they are */
     * {
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
- 
+
     html,
     body {
         background: #fcfbf9;
     }
- 
+
     body {
         display: flex;
         flex-direction: column;
@@ -835,24 +835,24 @@ a {
         padding: 14mm 14.5mm;
         color: #4f4237;
     }
- 
+
     body::before {
         display: none;
     }
- 
+
     main {
         display: flex;
         flex: 1;
         flex-direction: column;
         justify-content: center;
     }
- 
+
     audio,
     .button {
         display: none;
     }
- 
- 
+
+
     /* Running header: brand on the left, page name and number on the right */
     .header {
         position: static;
@@ -863,11 +863,11 @@ a {
         background: none;
         border-bottom: 1px solid #d9d2c6;
     }
- 
+
     .header > * {
         display: none;
     }
- 
+
     .header::before {
         content: "SERAVÉ · HANDPICKED CHARMS";
         font-family: var(--font-body);
@@ -875,7 +875,7 @@ a {
         letter-spacing: 0.04em;
         color: #6b5d51;
     }
- 
+
     .header::after {
         content: "ORDER FORM — PAGE 5";
         font-family: var(--font-heading);
@@ -883,8 +883,8 @@ a {
         letter-spacing: 0.04em;
         color: #6b5d51;
     }
- 
- 
+
+
     /* Hero: title and subtitle on the left with a rule underneath */
     .hero {
         display: block;
@@ -895,18 +895,18 @@ a {
         text-align: left;
         background: none;
     }
- 
+
     .hero_charm {
         display: none;
     }
- 
+
     .hero_title {
         margin-bottom: 2.5mm;
         font-size: 23pt;
         font-weight: 300;
         color: #4f4237;
     }
- 
+
     .hero_subtitle {
         max-width: none;
         padding-bottom: 3mm;
@@ -917,33 +917,33 @@ a {
         line-height: 1.5;
         color: #6b5d51;
     }
- 
- 
+
+
     /* Form: plain fields with underlines */
     .order {
         padding: 0;
         isolation: auto;
         background: none;
     }
- 
+
     .order::before,
     .order::after {
         display: none;
     }
- 
+
     .order_layout {
         display: block;
         max-width: none;
         margin: 0;
     }
- 
+
     .order_card {
         min-height: 0;
         padding: 0;
         border-radius: 0;
         background: none;
     }
- 
+
     .order_title {
         position: static;
         margin-bottom: 3mm;
@@ -957,7 +957,7 @@ a {
         text-transform: uppercase;
         color: #3b3027;
     }
- 
+
     .order_label {
         display: block;
         margin: 0 0 1mm;
@@ -967,7 +967,7 @@ a {
         text-transform: uppercase;
         color: #8a7d70;
     }
- 
+
     .order_input,
     .order_textarea {
         display: block;
@@ -981,12 +981,12 @@ a {
         background: none;
         resize: none;
     }
- 
+
     .order_actions {
         display: none;
     }
- 
- 
+
+
     /* 1. Customer information: two columns of fields */
     .order_card:nth-child(1) {
         display: grid;
@@ -994,15 +994,15 @@ a {
         column-gap: 5.5mm;
         margin-bottom: 5mm;
     }
- 
+
     .order_card:nth-child(1) .order_title {
         grid-column: 1 / 3;
     }
- 
+
     .order_card:nth-child(1) .order_title::before {
         content: "1. ";
     }
- 
+
     .order_card:nth-child(1) label:nth-of-type(1) { grid-area: 2 / 1; }
     .order_card:nth-child(1) input:nth-of-type(1) { grid-area: 3 / 1; }
     .order_card:nth-child(1) label:nth-of-type(2) { grid-area: 2 / 2; }
@@ -1011,8 +1011,8 @@ a {
     .order_card:nth-child(1) input:nth-of-type(3) { grid-area: 5 / 1; }
     .order_card:nth-child(1) label:nth-of-type(4) { grid-area: 4 / 2; }
     .order_card:nth-child(1) input:nth-of-type(4) { grid-area: 5 / 2; }
- 
- 
+
+
     /* 2. Selections: one bordered card with checkboxes in rows */
     .order_card:nth-child(2) {
         margin-bottom: 5mm;
@@ -1021,16 +1021,16 @@ a {
         border-radius: 2.5mm;
         background: #fffdfb;
     }
- 
+
     .order_card:nth-child(2) .order_title {
         font-size: 0;
     }
- 
+
     .order_card:nth-child(2) .order_title::before {
         content: "2. SELECTIONS";
         font-size: 7.5pt;
     }
- 
+
     .order_group_title {
         margin: 0 0 1.5mm;
         font-family: var(--font-heading);
@@ -1040,16 +1040,16 @@ a {
         text-transform: uppercase;
         color: #3b3027;
     }
- 
+
     .order_group_title:nth-of-type(2) {
         font-size: 0;
     }
- 
+
     .order_group_title:nth-of-type(2)::before {
         content: "CHARM PREFERENCES";
         font-size: 5.5pt;
     }
- 
+
     .order_option {
         display: inline-block;
         margin: 0 5mm 2.5mm 0;
@@ -1057,7 +1057,7 @@ a {
         font-family: var(--font-body);
         font-size: 6.5pt;
     }
- 
+
     .order_option input {
         display: inline-block;
         width: 3mm;
@@ -1065,32 +1065,32 @@ a {
         margin: 0 1.5mm 0 0;
         vertical-align: middle;
     }
- 
+
     /* Bundle deals are printed with short names */
     .order_option:nth-of-type(n+5) {
         font-size: 0;
     }
- 
+
     .order_option:nth-of-type(n+5)::after {
         font-size: 6.5pt;
     }
- 
+
     .order_option:nth-of-type(5)::after { content: "Gold + 3 Charms"; }
     .order_option:nth-of-type(6)::after { content: "Silver + 3 Charms"; }
     .order_option:nth-of-type(7)::after { content: "Gold + 5 Charms"; }
     .order_option:nth-of-type(8)::after { content: "Silver + 5 Charms"; }
- 
+
     .order_divider {
         display: none;
     }
- 
- 
+
+
     /* Referral source: just the two lines */
     .order_card:nth-child(3) .order_title {
         display: none;
     }
- 
- 
+
+
     /* Running footer: copyright on the left, page number on the right */
     .footer {
         display: flex;
@@ -1103,23 +1103,23 @@ a {
         text-align: left;
         color: #6b5d51;
     }
- 
+
     .footer_social,
     .footer_links {
         display: none;
     }
- 
+
     .footer_copyright {
         font-size: 0;
     }
- 
+
     .footer_copyright::before {
         content: "© 2026 Seravé. Created by Nikka Marielle Bernal | All Rights Reserved.";
         font-family: var(--font-heading);
         font-size: 5pt;
         color: #7a6c60;
     }
- 
+
     .footer::after {
         content: "5";
         font-family: var(--font-heading);
