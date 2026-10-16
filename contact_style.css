@@ -551,7 +551,6 @@ a {
     }
 
 
-    /* Contact: note, email, phone number and socials stacked */
     .contact {
         padding: 44px 20px 24px;
     }
@@ -596,7 +595,7 @@ a {
     }
 
     .contact_copyright {
-        padding-top: 120px;
+        padding-top: 300px;
     }
 }
 
