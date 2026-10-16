@@ -317,7 +317,7 @@ a {
 
 
 /* VERTICAL MENU */
-@media screen and (max-width: 1024px) {
+@media (max-width: 1024px) {
 
     /* Panel stays in place while the page scrolls behind it */
     .menu_panel {
@@ -357,10 +357,7 @@ a {
 }
 
 
-
-
-/* CONTACT FADE (TABLET AND MOBILE) */
-@media screen and (max-width: 1024px) {
+@media (max-width: 1024px) {
 
     .contact {
         position: relative;
@@ -390,7 +387,7 @@ a {
 
 
 /* TABLET VIEWPORT */
-@media screen and (min-width: 601px) and (max-width: 1024px) {
+@media (min-width: 601px) and (max-width: 1024px) {
 
     /* Header: audio button stays beside the hamburger, nav on the right */
     .header {
@@ -481,7 +478,7 @@ a {
 
 
 /* MOBILE VIEWPORT */
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
 
     /* Header: hamburger on the left, logo in the middle, audio on the right */
     .header {
@@ -551,6 +548,7 @@ a {
     }
 
 
+    /* Contact: note, email, phone number and socials stacked */
     .contact {
         padding: 44px 20px 24px;
     }
@@ -598,7 +596,6 @@ a {
         padding-top: 300px;
     }
 }
-
 
 
 /* PRINT VIEWPORT */
